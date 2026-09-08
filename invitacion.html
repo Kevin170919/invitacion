@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mariana, tengo una propuesta</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    background:
+        radial-gradient(circle at 15% 20%, #ff8a3d 0%, transparent 35%),
+        radial-gradient(circle at 85% 80%, #c81d11 0%, transparent 40%),
+        linear-gradient(135deg,#1a1310 0%,#2b150c 35%,#4a1608 65%,#1a1310 100%);
+    background-size:200% 200%, 200% 200%, 400% 400%;
+    animation:fondo 18s ease infinite;
+    position:relative;
+}
+
+@keyframes fondo{
+    0%{background-position:0% 0%, 100% 100%, 0% 50%;}
+    50%{background-position:20% 30%, 80% 70%, 100% 50%;}
+    100%{background-position:0% 0%, 100% 100%, 0% 50%;}
+}
+
+.smoke{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,.05) 0%, transparent 40%),
+        radial-gradient(circle at 75% 75%, rgba(255,255,255,.04) 0%, transparent 45%);
+    pointer-events:none;
+}
+
+.container{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    position:relative;
+    z-index:5;
+}
+
+.card{
+    width:820px;
+    max-width:95%;
+    text-align:center;
+    color:white;
+    padding:55px 50px;
+    border-radius:20px;
+    backdrop-filter:blur(18px);
+    background:rgba(20,12,8,.4);
+    border:1px solid rgba(255,150,70,.2);
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
+}
+
+.eyebrow{
+    font-size:.85rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#ff9a4d;
+    margin-bottom:14px;
+    font-weight:600;
+}
+
+h1{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:2.8rem;
+    margin-bottom:18px;
+    color:#fff7ef;
+}
+
+.subtitle{
+    font-size:1.05rem;
+    margin-bottom:22px;
+    color:#e8c9b0;
+    line-height:1.5;
+}
+
+.food{
+    position:absolute;
+    font-size:60px;
+    user-select:none;
+    filter:drop-shadow(0 0 14px rgba(255,120,0,.35));
+    opacity:.9;
+}
+
+.burger{
+    top:10%;
+    left:9%;
+    animation:bounce 3s infinite;
+}
+
+.ribs{
+    top:14%;
+    right:9%;
+    animation:spin 9s linear infinite;
+}
+
+.fries{
+    bottom:14%;
+    left:7%;
+    animation:bounce 4s infinite;
+}
+
+.meat{
+    bottom:14%;
+    right:9%;
+    animation:bounce 2.5s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-22px);}
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.message{
+    opacity:0;
+    font-size:1.08rem;
+    margin:12px 0;
+    animation:show .8s forwards;
+    color:#f1d9c4;
+    line-height:1.4;
+}
+
+.m1{animation-delay:1s;}
+.m2{animation-delay:3s;}
+.m3{animation-delay:5s;}
+.m4{animation-delay:7s;}
+
+@keyframes show{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.question{
+    margin-top:26px;
+    font-size:1.7rem;
+    font-weight:600;
+    color:#fff;
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+}
+
+.buttons{
+    margin-top:32px;
+    position:relative;
+    min-height:60px;
+}
+
+button{
+    padding:14px 32px;
+    border:none;
+    border-radius:50px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#yes{
+    background:linear-gradient(90deg,#ffb454,#ff6a1f);
+    color:#2a0f05;
+    margin-right:15px;
+    box-shadow:0 8px 20px rgba(255,106,0,.35);
+}
+
+#yes:hover{
+    transform:scale(1.07);
+    box-shadow:0 10px 26px rgba(255,106,0,.5);
+}
+
+#no{
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    border:1px solid rgba(255,255,255,.2);
+}
+
+.result{
+    margin-top:26px;
+    font-size:1.3rem;
+    font-weight:600;
+    color:#f1d9c4;
+}
+
+.ember{
+    position:absolute;
+    color:#ff8a3d;
+    animation:rise 9s linear infinite;
+    opacity:.7;
+    pointer-events:none;
+}
+
+@keyframes rise{
+    from{transform:translateY(100vh) scale(1); opacity:.8;}
+    90%{opacity:.6;}
+    to{transform:translateY(-120px) scale(.6); opacity:0;}
+}
+
+.accepted{
+    font-size:1.7rem;
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    color:#ffcf8a;
+}
+
+</style>
+</head>
+<body>
+
+<div class="smoke"></div>
+
+<div class="food burger">🍖</div>
+<div class="food ribs">🥩</div>
+<div class="food fries">🔥</div>
+<div class="food meat">🍖</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="eyebrow">Una invitación con humo de por medio</div>
+
+        <h1>Mariana, tengo una propuesta</h1>
+
+        <p class="subtitle">
+            No es una cena cualquiera. Es carbón encendido, buena mesa y tú al frente.
+        </p>
+
+        <div class="message m1">
+            Encontré un lugar donde las costillas se caen del hueso solas.
+        </div>
+
+        <div class="message m2">
+            Y pensé: esto no lo puedo disfrutar sin ti.
+        </div>
+
+        <div class="message m3">
+            Así que aparté mesa, aparté hambre, y te aparté a ti también.
+        </div>
+
+        <div class="message m4">
+            Solo falta tu sí.
+        </div>
+
+        <div class="question">
+            ¿Vamos a comer algo increíble juntos?
+        </div>
+
+        <div class="buttons">
+            <button id="yes">Sí, vamos 🔥</button>
+            <button id="no">No 😅</button>
+        </div>
+
+        <div class="result" id="result"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById('no');
+const yesBtn = document.getElementById('yes');
+const result = document.getElementById('result');
+
+const noPhrases = [
+    'No 😅',
+    '¿En serio? 🤔',
+    'Las costillas te esperan 🍖',
+    'Lo pensaste mal 😏',
+    'Última oportunidad 👀',
+    'Ok, insisto una vez más 🔥'
+];
+let noIndex = 0;
+
+for(let i=0;i<22;i++){
+
+    const ember = document.createElement('div');
+
+    ember.className='ember';
+    ember.innerHTML = Math.random() > .5 ? '🔥' : '✨';
+
+    ember.style.left=Math.random()*100+'vw';
+    ember.style.fontSize=(10+Math.random()*16)+'px';
+    ember.style.animationDuration=(6+Math.random()*8)+'s';
+    ember.style.animationDelay=Math.random()*5+'s';
+
+    document.body.appendChild(ember);
+}
+
+noBtn.addEventListener('mouseover',()=>{
+
+    let x=Math.random()*(window.innerWidth-180);
+    let y=Math.random()*(window.innerHeight-100);
+
+    noBtn.style.position='fixed';
+    noBtn.style.left=x+'px';
+    noBtn.style.top=y+'px';
+
+    noIndex = (noIndex + 1) % noPhrases.length;
+    noBtn.textContent = noPhrases[noIndex];
+});
+
+yesBtn.addEventListener('click',()=>{
+
+    result.innerHTML=
+    '<div class="accepted">Sabía que dirías que sí 🔥<br>Nos vemos pronto, prepárate para comer bien.</div>';
+
+    lluviaComida();
+});
+
+function lluviaComida(){
+
+    const emojis=['🍖','🥩','🔥','✨'];
+
+    for(let i=0;i<180;i++){
+
+        const item=document.createElement('div');
+
+        item.innerHTML=
+        emojis[Math.floor(Math.random()*emojis.length)];
+
+        item.style.position='fixed';
+        item.style.left=Math.random()*100+'vw';
+        item.style.top='-100px';
+        item.style.fontSize=(20+Math.random()*38)+'px';
+        item.style.zIndex='999';
+
+        document.body.appendChild(item);
+
+        setTimeout(()=>{
+
+            item.style.transition='all 5s linear';
+            item.style.top='120vh';
+            item.style.transform=`rotate(${Math.random()*1080}deg)`;
+
+        },50);
+
+        setTimeout(()=>{
+            item.remove();
+        },6000);
+    }
+}
+
+</script>
+
+</body>
+</html>
