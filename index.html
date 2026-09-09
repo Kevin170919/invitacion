@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mariana, tengo una propuesta</title>
+<title>Querida Marianita,</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -65,10 +65,11 @@ body{
     background:rgba(20,12,8,.4);
     border:1px solid rgba(255,150,70,.2);
     box-shadow:0 25px 60px rgba(0,0,0,.5);
+    transition:opacity .4s ease;
 }
 
 .eyebrow{
-    font-size:.85rem;
+    font-size:.8rem;
     letter-spacing:3px;
     text-transform:uppercase;
     color:#ff9a4d;
@@ -80,14 +81,14 @@ h1{
     font-family:'Playfair Display',serif;
     font-style:italic;
     font-weight:600;
-    font-size:2.8rem;
-    margin-bottom:18px;
+    font-size:2.5rem;
+    margin-bottom:16px;
     color:#fff7ef;
 }
 
 .subtitle{
-    font-size:1.05rem;
-    margin-bottom:22px;
+    font-size:1rem;
+    margin-bottom:20px;
     color:#e8c9b0;
     line-height:1.5;
 }
@@ -100,29 +101,10 @@ h1{
     opacity:.9;
 }
 
-.burger{
-    top:10%;
-    left:9%;
-    animation:bounce 3s infinite;
-}
-
-.ribs{
-    top:14%;
-    right:9%;
-    animation:spin 9s linear infinite;
-}
-
-.fries{
-    bottom:14%;
-    left:7%;
-    animation:bounce 4s infinite;
-}
-
-.meat{
-    bottom:14%;
-    right:9%;
-    animation:bounce 2.5s infinite;
-}
+.burger{top:10%;left:9%;animation:bounce 3s infinite;}
+.ribs{top:14%;right:9%;animation:spin 9s linear infinite;}
+.fries{bottom:14%;left:7%;animation:bounce 4s infinite;}
+.meat{bottom:14%;right:9%;animation:bounce 2.5s infinite;}
 
 @keyframes bounce{
     0%,100%{transform:translateY(0);}
@@ -136,17 +118,16 @@ h1{
 
 .message{
     opacity:0;
-    font-size:1.08rem;
-    margin:12px 0;
+    font-size:1.03rem;
+    margin:10px 0;
     animation:show .8s forwards;
     color:#f1d9c4;
     line-height:1.4;
 }
 
-.m1{animation-delay:1s;}
-.m2{animation-delay:3s;}
-.m3{animation-delay:5s;}
-.m4{animation-delay:7s;}
+.m1{animation-delay:.8s;}
+.m2{animation-delay:2.3s;}
+.m3{animation-delay:3.8s;}
 
 @keyframes show{
     from{opacity:0;transform:translateY(18px);}
@@ -154,8 +135,8 @@ h1{
 }
 
 .question{
-    margin-top:26px;
-    font-size:1.7rem;
+    margin-top:24px;
+    font-size:1.5rem;
     font-weight:600;
     color:#fff;
     font-family:'Playfair Display',serif;
@@ -163,7 +144,7 @@ h1{
 }
 
 .buttons{
-    margin-top:32px;
+    margin-top:30px;
     position:relative;
     min-height:60px;
 }
@@ -196,13 +177,6 @@ button{
     border:1px solid rgba(255,255,255,.2);
 }
 
-.result{
-    margin-top:26px;
-    font-size:1.3rem;
-    font-weight:600;
-    color:#f1d9c4;
-}
-
 .ember{
     position:absolute;
     color:#ff8a3d;
@@ -217,11 +191,90 @@ button{
     to{transform:translateY(-120px) scale(.6); opacity:0;}
 }
 
-.accepted{
-    font-size:1.7rem;
+/* ---- Ticket / Agenda ---- */
+
+.ticket{
+    display:none;
+    text-align:left;
+    background:linear-gradient(160deg,#fff7ef,#ffe9d3);
+    color:#2a1305;
+    border-radius:16px;
+    padding:0;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.ticket-head{
+    background:linear-gradient(90deg,#ff6a1f,#c81d11);
+    padding:22px 28px;
+    color:#fff7ef;
+}
+
+.ticket-head .tag{
+    font-size:.75rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    opacity:.85;
+    margin-bottom:4px;
+}
+
+.ticket-head .title{
     font-family:'Playfair Display',serif;
     font-style:italic;
-    color:#ffcf8a;
+    font-size:1.6rem;
+    font-weight:600;
+}
+
+.ticket-body{
+    padding:26px 28px 28px;
+    position:relative;
+}
+
+.ticket-body::before{
+    content:'';
+    position:absolute;
+    top:-14px;
+    left:0;
+    right:0;
+    height:0;
+    border-top:2px dashed rgba(200,140,80,.4);
+}
+
+.detail-row{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    margin-bottom:18px;
+}
+
+.detail-icon{
+    font-size:1.4rem;
+    line-height:1.2;
+}
+
+.detail-label{
+    font-size:.72rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:#a4643a;
+    font-weight:600;
+    margin-bottom:2px;
+}
+
+.detail-value{
+    font-size:1.05rem;
+    font-weight:600;
+    color:#2a1305;
+}
+
+.ticket-footer{
+    margin-top:6px;
+    padding-top:16px;
+    border-top:1px dashed rgba(200,140,80,.4);
+    font-size:.88rem;
+    color:#7a4c2b;
+    font-style:italic;
+    text-align:center;
 }
 
 </style>
@@ -237,42 +290,73 @@ button{
 
 <div class="container">
 
-    <div class="card">
+    <div class="card" id="card">
 
-        <div class="eyebrow">Una invitación con humo de por medio</div>
+        <div id="invite">
 
-        <h1>Mariana, tengo una propuesta</h1>
+            <div class="eyebrow">Aviso Importante</div>
 
-        <p class="subtitle">
-            No es una cena cualquiera. Es carbón encendido, buena mesa y tú al frente.
-        </p>
+            <h1>Mariana, una idea</h1>
 
-        <div class="message m1">
-            Encontré un lugar donde las costillas se caen del hueso solas.
+            <p class="subtitle">
+                Se lo mucho que te gusta la panceta de Rukito,
+            </p>
+
+            <div class="message m1">
+                Y tambien la menestra 😅.
+            </div>
+
+            <div class="message m2">
+                Y pensé, sería un gran plan si vamos a visitar Rukito.
+            </div>
+
+            <div class="message m3">
+                ¿Te animas?
+            </div>
+
+            <div class="question">
+                ¿Asi que, vamos a comer algo rico este fin?
+            </div>
+
+            <div class="buttons">
+                <button id="yes">Sí, vamos 🔥</button>
+                <button id="no">No 😅</button>
+            </div>
+
         </div>
 
-        <div class="message m2">
-            Y pensé: esto no lo puedo disfrutar sin ti.
+        <div class="ticket" id="ticket">
+            <div class="ticket-head">
+                <div class="tag">Tu cita está confirmada</div>
+                <div class="title">Datos Importantes:</div>
+            </div>
+            <div class="ticket-body">
+                <div class="detail-row">
+                    <div class="detail-icon">📅</div>
+                    <div>
+                        <div class="detail-label">Fecha</div>
+                        <div class="detail-value">Sábado 12 de septiembre</div>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-icon">🕓</div>
+                    <div>
+                        <div class="detail-label">Hora de recogida</div>
+                        <div class="detail-value">4:00 PM</div>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-icon">🚗</div>
+                    <div>
+                        <div class="detail-label">Transporte</div>
+                        <div class="detail-value">Tu carroza pasará por ti</div>
+                    </div>
+                </div>
+                <div class="ticket-footer">
+                    Solo falta que estés lista, de lo demás me encargo yo ❤️
+                </div>
+            </div>
         </div>
-
-        <div class="message m3">
-            Así que aparté mesa, aparté hambre, y te aparté a ti también.
-        </div>
-
-        <div class="message m4">
-            Solo falta tu sí.
-        </div>
-
-        <div class="question">
-            ¿Vamos a comer algo increíble juntos?
-        </div>
-
-        <div class="buttons">
-            <button id="yes">Sí, vamos 🔥</button>
-            <button id="no">No 😅</button>
-        </div>
-
-        <div class="result" id="result"></div>
 
     </div>
 
@@ -282,15 +366,16 @@ button{
 
 const noBtn = document.getElementById('no');
 const yesBtn = document.getElementById('yes');
-const result = document.getElementById('result');
+const invite = document.getElementById('invite');
+const ticket = document.getElementById('ticket');
+const card = document.getElementById('card');
 
 const noPhrases = [
     'No 😅',
     '¿En serio? 🤔',
-    'Las costillas te esperan 🍖',
-    'Lo pensaste mal 😏',
-    'Última oportunidad 👀',
-    'Ok, insisto una vez más 🔥'
+    'Piénsalo bien 👀',
+    'Última oportunidad 🔥',
+    'Ok, una vez más 😏'
 ];
 let noIndex = 0;
 
@@ -324,17 +409,21 @@ noBtn.addEventListener('mouseover',()=>{
 
 yesBtn.addEventListener('click',()=>{
 
-    result.innerHTML=
-    '<div class="accepted">Sabía que dirías que sí 🔥<br>Nos vemos pronto, prepárate para comer bien.</div>';
+    card.style.opacity='0';
 
-    lluviaComida();
+    setTimeout(()=>{
+        invite.style.display='none';
+        ticket.style.display='block';
+        card.style.opacity='1';
+        lluviaComida();
+    },400);
 });
 
 function lluviaComida(){
 
     const emojis=['🍖','🥩','🔥','✨'];
 
-    for(let i=0;i<180;i++){
+    for(let i=0;i<160;i++){
 
         const item=document.createElement('div');
 
